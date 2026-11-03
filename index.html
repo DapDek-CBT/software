@@ -142,6 +142,27 @@
   .feature p{color:var(--muted); font-size:14.5px; margin:0;}
   .feature .ficon{width:46px; height:46px; border-radius:12px; background:linear-gradient(135deg,#E6F8D8,#D3EBFD); display:flex; align-items:center; justify-content:center; margin-bottom:16px;}
 
+  /* ---------- packages ---------- */
+  .pkg-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; align-items:stretch;}
+  @media (max-width:960px){ .pkg-grid{grid-template-columns:1fr; max-width:520px; margin:0 auto;} }
+  .pkg{position:relative; background:#fff; border:1.5px solid var(--line); border-radius:20px; padding:30px 26px 26px; display:flex; flex-direction:column; transition:transform .2s, box-shadow .2s;}
+  .pkg:hover{transform:translateY(-6px); box-shadow:var(--shadow);}
+  .pkg.featured{background:linear-gradient(165deg,var(--navy),var(--navy-deep)); border-color:var(--blue); color:#fff; box-shadow:var(--shadow);}
+  .pkg-flag{position:absolute; top:-13px; left:26px; background:var(--green); color:var(--navy-deep); font-size:12px; font-weight:700; padding:5px 14px; border-radius:99px; letter-spacing:.04em; text-transform:uppercase;}
+  .pkg-tier{font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--green-deep);}
+  .pkg.featured .pkg-tier{color:var(--green-bright);}
+  .pkg h3{font-size:32px; margin:6px 0 4px;}
+  .pkg.featured h3{color:#fff;}
+  .pkg-sys{display:inline-block; align-self:flex-start; background:#E8F1FD; color:var(--blue-deep); font-weight:600; font-size:13.5px; padding:6px 12px; border-radius:8px; margin:8px 0 18px;}
+  .pkg.featured .pkg-sys{background:rgba(255,255,255,.12); color:#fff;}
+  .pkg-list{list-style:none; margin:0 0 24px; padding:0; flex-grow:1;}
+  .pkg-list li{display:flex; gap:11px; padding:9px 0; border-top:1px solid var(--line); font-size:14.5px; line-height:1.4;}
+  .pkg-list li:first-child{border-top:none;}
+  .pkg-list li svg{flex:none; margin-top:1px;}
+  .pkg.featured .pkg-list li{border-top-color:rgba(255,255,255,.14); color:#E4EAF8;}
+  .pkg.featured .pkg-list b{color:#fff;}
+  .pkg-note{text-align:center; color:var(--muted); margin:34px 0 0; font-size:15px;}
+
   /* ---------- FAQ ---------- */
   .faq-item{border-top:1px solid var(--line); padding:20px 0;}
   .faq-item:last-child{border-bottom:1px solid var(--line);}
@@ -201,6 +222,7 @@
     <div class="navlinks">
       <a href="#schools">How It Works</a>
       <a href="#features">Why DapDek</a>
+      <a href="#packages">Packages</a>
       <a href="#faq">FAQ</a>
       <a href="#get-started" class="navcta">Get Started</a>
     </div>
@@ -283,7 +305,7 @@
       <div class="rolecard reveal">
         <div class="thumb"><img src="parent-woman.jpg" alt="A parent happily checking her child's result on a phone"></div>
         <div class="body">
-          <div class="role-eyebrow">A parent's own computer</div>
+          <div class="role-eyebrow">Parent portal · Standard package</div>
           <h3>Parent</h3>
           <p>Check a child's results, attendance and school notices from home or anywhere, securely, via Tailscale remote access — no phone call to the office needed.</p>
           <a class="demo" href="#get-started" data-interest="Parent">Request demo</a>
@@ -319,7 +341,7 @@
       <img src="parent-woman.jpg" alt="A mother smiling at her child's result">
     </div>
     <div class="reveal">
-      <div class="kicker">For parents</div>
+      <div class="kicker">For parents · Standard package</div>
       <h3>Results reach parents, without a phone call.</h3>
       <p class="desc">Parents see results, attendance and school notices through their own Parent app — so good news travels fast and the school office stays free to do its job.</p>
       <ul class="points">
@@ -374,7 +396,44 @@
   </div>
 </section>
 
-<section id="faq" class="white">
+<section id="packages" class="white">
+  <div class="wrap">
+    <div class="sechead center reveal">
+      <div class="kicker">Packages</div>
+      <h2>Pick the package that fits your school</h2>
+      <p>Every package runs on your school's own network. Choose by how many computers need to be connected at once — and move up whenever your school grows.</p>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg reveal">
+        
+        <div class="pkg-tier">Entry-level</div>
+        <h3>Micro</h3>
+        <div class="pkg-sys">Up to 10 systems at once</div>
+        <ul class="pkg-list"><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Computer-Based Testing (CBT)</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Basic student records</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Basic class management</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Examination administration</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Automatic marking of objective questions</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Basic examination results</span></li></ul>
+        <a class="demo" href="#get-started" data-interest="Micro package">Request demo</a>
+      </div>
+      <div class="pkg reveal">
+        
+        <div class="pkg-tier">Mid-tier</div>
+        <h3>Affordable</h3>
+        <div class="pkg-sys">Up to 30 systems at once</div>
+        <ul class="pkg-list"><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Everything in Micro</b></span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Real Continuous Assessment</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Theory questions and answers</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Reusable question bank</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Downloadable result slips</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Weekly class timetable</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Daily attendance management</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>School fees management</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Receipt generation</span></li></ul>
+        <a class="demo" href="#get-started" data-interest="Affordable package">Request demo</a>
+      </div>
+      <div class="pkg featured reveal">
+        <div class="pkg-flag">Most complete</div>
+        <div class="pkg-tier">Full solution</div>
+        <h3>Standard</h3>
+        <div class="pkg-sys">Up to 100 systems at once</div>
+        <ul class="pkg-list"><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Everything in Affordable</b></span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Full school management</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Parent portal</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Digital ID cards with QR codes</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>QR-based attendance</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>School broadsheets</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>School results dashboard</span></li><li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#6CCB2A"/><path d="M5 9.5l2.5 2.5L13 6" stroke="#001244" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Homework management</span></li></ul>
+        <a class="demo" href="#get-started" data-interest="Standard package">Request demo</a>
+      </div>
+    </div>
+    <p class="pkg-note reveal">Not sure which one fits? Request a demo and we'll recommend the right package for your school.</p>
+  </div>
+</section>
+
+<section id="faq">
   <div class="wrap" style="max-width:800px;">
     <div class="sechead reveal">
       <div class="kicker">FAQ</div>
@@ -407,7 +466,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-q">How much does DapDek CBT cost? <svg class="chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="faq-a"><p>Pricing depends on your school's size and needs. Fill in the form below, or reach us directly by email or WhatsApp, and we'll get you a quote alongside your free trial.</p></div>
+        <div class="faq-a"><p>DapDek CBT comes in three packages — Micro (up to 10 systems), Affordable (up to 30 systems) and Standard (up to 100 systems). Pricing depends on the package and your school's needs. Request a demo or fill in the form below, or reach us by email or WhatsApp, and we'll send you a quote alongside your free trial.</p></div>
       </div>
     </div>
   </div>
