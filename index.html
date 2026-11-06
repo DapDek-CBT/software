@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DapDek CBT — Computer-Based Testing for Schools</title>
-<meta name="description" content="DapDek CBT runs computer-based testing entirely on your school's own network — admin, teacher, student and parent apps, fully offline. Try free for 7 days.">
+<meta name="description" content="DapDek CBT runs computer-based testing entirely on your school's own network — desktop apps for Admin, Teacher, Student and School Management plus an installable Parent app. Internet needed only once, to activate. Try free for 7 days.">
 <link rel="icon" href="dapdek-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,9 +117,12 @@
   section.white{background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
 
   /* ---------- role cards ---------- */
-  .rolegrid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
-  @media (max-width:1020px){ .rolegrid{grid-template-columns:1fr 1fr;} }
-  @media (max-width:560px){ .rolegrid{grid-template-columns:1fr;} }
+  .rolegrid{display:grid; grid-template-columns:repeat(6,1fr); gap:22px;}
+  .rolegrid .rolecard{grid-column:span 2;}
+  .rolegrid .rolecard:nth-child(4){grid-column:2 / span 2;}
+  .rolegrid .rolecard:nth-child(5){grid-column:4 / span 2;}
+  @media (max-width:1020px){ .rolegrid{grid-template-columns:1fr 1fr;} .rolegrid .rolecard,.rolegrid .rolecard:nth-child(4),.rolegrid .rolecard:nth-child(5){grid-column:auto;} .rolegrid .rolecard:nth-child(5){grid-column:1 / -1; max-width:calc(50% - 11px); justify-self:center;} }
+  @media (max-width:560px){ .rolegrid{grid-template-columns:1fr;} .rolegrid .rolecard:nth-child(5){max-width:none;} }
   .rolecard{background:var(--white); border:1px solid var(--line); border-radius:18px; overflow:hidden; display:flex; flex-direction:column; transition:transform .2s, box-shadow .2s;}
   .rolecard:hover{transform:translateY(-6px); box-shadow:var(--shadow);}
   .rolecard .thumb{aspect-ratio:16/11; overflow:hidden; background:var(--navy);}
@@ -234,7 +237,7 @@
     <div class="reveal">
       <div class="pill"><i></i> Computer-based testing, built for Nigerian schools</div>
       <h1>Exams that run on your network, <em>grade themselves</em>, and never keep your school waiting.</h1>
-      <p class="lead">DapDek CBT brings proper computer-based testing to your school's own network — no internet required on exam day. One system, with its own standalone app for admins, teachers, students and parents.</p>
+      <p class="lead">DapDek CBT brings proper computer-based testing to your school's own network — internet needed only once, to activate. One system, with desktop apps for Admin, Teacher, Student and School Management, plus an installable Parent app.</p>
       <div class="cta-row">
         <a href="#get-started" class="btn btn-primary">Start your 7-day free trial</a>
         <a href="#schools" class="btn btn-outline">See how it works</a>
@@ -259,8 +262,8 @@
 
 <div class="stats">
   <div class="wrap">
-    <div class="stat"><b>4</b><span>Standalone apps — Admin, Teacher, Student, Parent</span></div>
-    <div class="stat"><b><em>0</em></b><span>Internet connections needed once installed</span></div>
+    <div class="stat"><b>4+1</b><span>Desktop apps — Admin, Teacher, Student, School Management — plus an installable Parent app</span></div>
+    <div class="stat"><b><em>Once</em></b><span>Internet needed only to activate — then fully offline</span></div>
     <div class="stat"><b>7</b><span>Days free, full access, every feature</span></div>
     <div class="stat"><b>1</b><span>School network — every classroom connects to it</span></div>
   </div>
@@ -276,12 +279,12 @@
 
     <div class="rolegrid">
       <div class="rolecard reveal">
-        <div class="thumb"><img src="admin-dashboard.jpg" alt="Admin dashboard showing the student records list"></div>
+        <div class="thumb"><img src="teacher-man.jpg" alt="Admin working on a laptop in the ICT lab"></div>
         <div class="body">
           <div class="role-eyebrow">School office computer</div>
-          <h3>Admin &amp; Server</h3>
+          <h3>Admin</h3>
           <p>Set up exams, manage classes and staff, and see the School Overview — including the network address every other computer connects to.</p>
-          <a class="demo" href="#get-started" data-interest="Admin &amp; Server">Request demo</a>
+          <a class="demo" href="#get-started" data-interest="Admin">Request demo</a>
         </div>
       </div>
       <div class="rolecard reveal">
@@ -289,7 +292,7 @@
         <div class="body">
           <div class="role-eyebrow">Every teacher's computer</div>
           <h3>Teacher</h3>
-          <p>Create and mark exams, review AI-assisted theory grading, and track each class's progress — connects straight to the office computer.</p>
+          <p>Create and mark exams, review suggested scores for theory answers, and track each class's progress — connects straight to the office computer.</p>
           <a class="demo" href="#get-started" data-interest="Teacher">Request demo</a>
         </div>
       </div>
@@ -303,9 +306,18 @@
         </div>
       </div>
       <div class="rolecard reveal">
+        <div class="thumb"><img src="admin-dashboard.jpg" alt="School Management app showing the student records list"></div>
+        <div class="body">
+          <div class="role-eyebrow">Desktop app</div>
+          <h3>School Management</h3>
+          <p>Run day-to-day school administration — student records, classes, timetable, attendance, fees and receipts — from one place.</p>
+          <a class="demo" href="#get-started" data-interest="School Management">Request demo</a>
+        </div>
+      </div>
+      <div class="rolecard reveal">
         <div class="thumb"><img src="parent-woman.jpg" alt="A parent happily checking her child's result on a phone"></div>
         <div class="body">
-          <div class="role-eyebrow">Parent portal · Standard package</div>
+          <div class="role-eyebrow">Installable app · Standard package</div>
           <h3>Parent</h3>
           <p>Check a child's results, attendance and school notices from home or anywhere, securely, via Tailscale remote access — no phone call to the office needed.</p>
           <a class="demo" href="#get-started" data-interest="Parent">Request demo</a>
@@ -365,7 +377,7 @@
       <div class="feature reveal">
         <div class="ficon"><svg width="22" height="22" viewBox="0 0 20 20" fill="none"><path d="M10 2v16M2 10h16" stroke="#013AA7" stroke-width="1.8" stroke-linecap="round"/></svg></div>
         <h4>Built for patchy connectivity</h4>
-        <p>Every app runs offline after installation. No exam ever depends on the network holding up.</p>
+        <p>Internet is needed once, to activate. After that, every app runs offline. No exam ever depends on the internet.</p>
       </div>
       <div class="feature reveal">
         <div class="ficon"><svg width="22" height="22" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="10" rx="1.5" stroke="#013AA7" stroke-width="1.8"/><path d="M7 17h6" stroke="#013AA7" stroke-width="1.8" stroke-linecap="round"/></svg></div>
@@ -375,7 +387,7 @@
       <div class="feature reveal">
         <div class="ficon"><svg width="22" height="22" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="#013AA7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h4>Instant, honest grading</h4>
-        <p>Objective questions are marked the moment they're submitted. Theory answers get AI-assisted suggestions that the teacher reviews and confirms — never an unchecked score.</p>
+        <p>Objective questions are marked the moment they're submitted. Theory answers get suggested scores that the teacher reviews and confirms — never an unchecked score.</p>
       </div>
       <div class="feature reveal">
         <div class="ficon"><svg width="22" height="22" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="#013AA7" stroke-width="1.8"/><path d="M4 17c0-3 2.7-5 6-5s6 2 6 5" stroke="#013AA7" stroke-width="1.8" stroke-linecap="round"/></svg></div>
@@ -442,7 +454,7 @@
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q">Do I need internet to use DapDek CBT? <svg class="chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="faq-a"><p>Only to download and install it the first time. After that, it runs entirely on your school's own network — exams, grading, report cards, everything — with no internet connection needed. Internet is only needed if you choose to give parents remote access.</p></div>
+        <div class="faq-a"><p>Only once, to activate. After that, it runs entirely on your school's own network — exams, grading, report cards, everything — with no internet connection needed. Internet is only needed again if you choose to give parents remote access.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">How does the 7-day free trial work? <svg class="chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -454,7 +466,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-q">How many computers do I need, and how do they connect? <svg class="chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="faq-a"><p>One computer (usually the school office) runs the Admin &amp; Server app. Every Teacher, Student or Parent computer installs its own matching app and connects to that one computer over your school's network.</p></div>
+        <div class="faq-a"><p>One computer (usually the school office) runs the Admin app. Every Teacher, Student and School Management computer installs its own matching desktop app and connects to that one computer over your school's network. Parents use the installable Parent app.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Can parents check results from outside the school network? <svg class="chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -462,7 +474,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-q">Is our school's data backed up? <svg class="chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="faq-a"><p>Yes — the Admin &amp; Server app automatically keeps a daily local snapshot, with the last 60 days always kept.</p></div>
+        <div class="faq-a"><p>Yes — the Admin app automatically keeps a daily local snapshot, with the last 60 days always kept.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">How much does DapDek CBT cost? <svg class="chev" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -511,7 +523,7 @@
     <div class="foot-top">
       <div class="foot-brand">
         <img src="dapdek-logo.png" alt="DapDek CBT logo">
-        <div><b>DapDek CBT</b><span>Computer-based testing for schools — runs on your own network, no internet needed.</span></div>
+        <div><b>DapDek CBT</b><span>Computer-based testing for schools — runs on your own network, internet needed only once, to activate.</span></div>
       </div>
       <div class="foot-links foot-address">
         <b>Our office</b>
